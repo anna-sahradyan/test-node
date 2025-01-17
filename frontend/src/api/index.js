@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:5000/post';
+export const API_URL = 'https://test-node-viz8.onrender.com';
