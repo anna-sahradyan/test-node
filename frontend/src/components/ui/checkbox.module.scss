@@ -1,0 +1,71 @@
+.checkLabel {
+  display: flex;
+  width: max-content;
+  gap: 0 10px;
+  //border: 1px solid blue;
+  //padding-top: 32px;
+  @media (max-width: 310px) {
+    width: 50%;
+  }
+  a {
+    color: var(--darkBlue);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.checkbox {
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='.5' y='.5' width='19' height='19' rx='3.5' stroke='%23313130'/%3E%3C/svg%3E");
+  }
+
+  &:checked::before {
+    content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='.5' y='.5' width='19' height='19' rx='3.5' stroke='%23313130'/%3E%3Cpath d='m2.5 11.32 3.97 4.42L17.5 4.26' stroke='%23313130' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+}
+
+.buttonLabel {
+  position: relative;
+  .checkboxButton {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .btn {
+    justify-content: center;
+    padding: 10px 18px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid transparent;
+    background-color:var(--grey-400);
+    width: max-content;
+    display: inline-block;
+    @media (max-width:932px) {
+      height: 36px;
+      padding: 6px 17px;
+    }
+    @media (max-width: 310px) {
+      padding: 0;
+    }
+  }
+
+  .checkboxButton:checked + span {
+    border-color: var(--black-400);
+
+  }
+}

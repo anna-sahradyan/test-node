@@ -1,0 +1,99 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+.containerInner {
+  margin: auto;
+  @media (max-width: 1200px) {
+    margin: 10px;
+  }
+  @media (max-width: 561px) {
+    margin: 20px;
+  }
+  @media (max-width: 378px) {
+    margin: 0;
+  }
+}
+
+.cardContainer {
+  margin-top: 129px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  @media (max-width: 1200px) {
+    margin-top: 80px;
+  }
+  @media (max-width: 1000px) {
+    margin-top: 60px;
+  }
+  @media (max-width: 561px) {
+    margin-top: 40px;
+  }
+  @media (max-width: 379px) {
+    margin-top: 20px;
+    gap: 44px;
+  }
+  @media (max-width: 339px) {
+    gap: 22px;
+  }
+}
+
+.cardContainer > * {
+  flex: 1 1 338px;
+  max-width: 338px;
+}
+
+.formContent {
+  width: 50%;
+  margin: 16px auto 24px auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  & form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @media (max-width: 745px) {
+      gap: 8px;
+    }
+  }
+
+  .btnField {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    @media (max-width: 745px) {
+      gap: 8px;
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--black-200-90);
+      font-size: 16px;
+      line-height: 18px;
+      color: var(--Dark-Grey, rgba(68, 68, 67, 0.9));
+      border-radius: 6px;
+      padding: 6.5px 14px;
+      gap: 8px;
+      @media (max-width: 745px) {
+        padding: 6.5px 6px;
+      }
+    }
+
+    .deleteBtn {
+      width: 100%;
+      max-width: 168px;
+      font-size: 16px;
+      @media (max-width: 745px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
