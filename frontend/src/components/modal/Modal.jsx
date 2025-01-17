@@ -1,4 +1,4 @@
-import React from "react";
+
 import style from "./modal.module.scss";
 import { ModalContent } from "./ModalContent.jsx";
 

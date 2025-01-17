@@ -51,6 +51,8 @@
     font-size: 1.1em;
     margin-top: 8px;
     flex-grow: 1;
+    height: 100%;
+    min-height: 289px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

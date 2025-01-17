@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import { Checkbox } from "../ui/Checkbox.jsx";
-import { fetchPosts, deletePost } from "../../redux/postsSlice.js";
+import {fetchPosts, deletePost, createPost} from "../../redux/postsSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./posts.module.scss";
 import {Post} from "./post/Post.jsx";
+import {ModalAddComponent} from "../modal/ModalAddComponent.jsx";
 
 
 export const Posts = ({ selectedPosts, setSelectedPosts }) => {
     const dispatch = useDispatch();
-    const { posts, loading, error } = useSelector((state) => state?.posts);
+    const { posts, loading} = useSelector((state) => state?.posts);
 
     useEffect(() => {
         dispatch(fetchPosts());
@@ -16,7 +17,7 @@ export const Posts = ({ selectedPosts, setSelectedPosts }) => {
 
     const selectAll = selectedPosts.size === posts.length && posts.length > 0;
     const isIndeterminate = selectedPosts.size > 0 && selectedPosts.size < posts.length;
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const handleSelectAll = (checked) => {
         if (checked) {
             const allPostIds = posts.map((post) => post._id);
@@ -32,29 +33,41 @@ export const Posts = ({ selectedPosts, setSelectedPosts }) => {
         });
         setSelectedPosts(new Set());
     };
-
+    const handleAddPost = (postData) => {
+        dispatch(createPost(postData));
+        setIsModalOpen(false);
+    };
 
     return (
         <div className={style.container}>
             <div className={style.formContent}>
-                <Checkbox
-                        checked={selectAll}
-                        indeterminate={isIndeterminate}
-                        onChange={(e) => handleSelectAll(e.target.checked)}
-                        disabled={posts.length === 0}
-                        name="select_all"
-                    />
-                <div className = {style.btnField}>
-                <button
-                    className={`${style.btn} ${style.deleteBtn}`}
-                    onClick={handleDeleteSelected}
-                    disabled={selectedPosts. size === 0}
-                >
-                    Delete Selected
-                </button>
+                <div className={style.btnField}>
+                    <div className={style.btnDeleteBox}>
+                        <Checkbox
+                            checked={selectAll}
+                            indeterminate={isIndeterminate}
+                            onChange={(e) => handleSelectAll(e.target.checked)}
+                            disabled={posts.length === 0}
+                            name="select_all"
+                        />
+
+                        <button
+                            className={`${style.btn} ${style.deleteBtn}`}
+                            onClick={handleDeleteSelected}
+                            disabled={selectedPosts.size === 0}
+                        >
+                            Delete Selected
+                        </button>
+                    </div>
+                    <button
+                        className={`${style.btn} ${style.deleteBtn}`}
+                        onClick={() => setIsModalOpen(true)}
+                    >
+                        Add Posts
+                    </button>
                 </div>
             </div>
-            {loading?(<div className = {style.loader}>loading...</div>): (<div className={style.containerInner}>
+            {loading ? (<div className={style.loader}>loading...</div>) : (<div className={style.containerInner}>
                 <div className={style.cardContainer}>
                     {posts.map((item, index) => (
                         <Post
@@ -69,6 +82,11 @@ export const Posts = ({ selectedPosts, setSelectedPosts }) => {
                 </div>
             </div>)}
 
+<ModalAddComponent
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+    onSubmit={handleAddPost}
+/>
         </div>
     );
 };

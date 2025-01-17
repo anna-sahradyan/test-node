@@ -16,7 +16,8 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (_, thunkAP
 
 export const createPost = createAsyncThunk('posts/createPost', async (postData, thunkAPI) => {
     try {
-        const response = await axios.post(API_URL, postData);
+        const response = await axios.post(`${API_URL}/post`, postData);
+        console.log(response.data.data)
         return response.data.data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data.message);
