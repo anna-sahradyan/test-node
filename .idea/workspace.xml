@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b89858d-1c08-4636-84a1-4db186068a97" name="Changes" comment="" />
+    <list default="true" id="7b89858d-1c08-4636-84a1-4db186068a97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +23,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2rfxMmh3nB6EoUAt4IP7OhejFNQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -75,7 +79,12 @@
       <workItem from="1736963890561" duration="8870000" />
       <workItem from="1737005953798" duration="20314000" />
       <workItem from="1737030669770" duration="5511000" />
-      <workItem from="1737093511753" duration="3437000" />
+      <workItem from="1737093511753" duration="7872000" />
+      <workItem from="1737103676077" duration="1245000" />
+      <workItem from="1737110190957" duration="838000" />
+      <workItem from="1737118508772" duration="10457000" />
+      <workItem from="1737206521139" duration="1075000" />
+      <workItem from="1740564561891" duration="702000" />
     </task>
     <servers />
   </component>
